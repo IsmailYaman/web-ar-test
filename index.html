@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AR Model Viewer</title>
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"
+    ></script>
+    <script
+      async
+      src="https://ga.jspm.io/npm:es-module-shims@1.7.1/dist/es-module-shims.js"
+    ></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <model-viewer
+      alt="Island"
+      src="island.glb"
+      ar
+      shadow-intensity="1"
+      camera-controls
+      postprocess="colorgrading"
+      colorgrading-exposure="1.2"
+      colorgrading-contrast="1.5"
+    ></model-viewer>
+
+    <div class="hotspot-button" onclick="startAR()">Start AR</div>
+
+    <!-- Add a hidden error message popup -->
+    <div id="popup" class="popup">
+      AR is not supported on this device.
+      <span class="popup-close-button" onclick="closePopup()">✕</span>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
